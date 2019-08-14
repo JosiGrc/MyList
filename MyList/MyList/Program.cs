@@ -10,6 +10,7 @@ namespace MyList
     {
         static void Main(string[] args)
         {
+            List<T> mylist = new List();
         }
     }
 }

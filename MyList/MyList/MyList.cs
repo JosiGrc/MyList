@@ -6,24 +6,36 @@ using System.Threading.Tasks;
 
 namespace MyList
 {
-    class MyList<T>
+    public class MyList<T>
     {
         //Member Variables
         private T[] items;
-        
+
+        public T this[int itemToIndex]
+        {
+            get
+            {
+                return items[itemToIndex];
+            }
+
+
+
+
+        }
+
         //Ctor
         public MyList()
         {
-
+            items = new T[0];
          
         }
 
         //Methods
-        public void AddingItemsToList()
+        public void Add(T itemToAdd)
         {
+            items[0] = itemToAdd;
 
         }
-        public void 
 
     }
 }
