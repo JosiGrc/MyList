@@ -11,7 +11,7 @@ namespace MyList
         //Member Variables
         // crreate variables/properties for both count and capacity
         private T[] items;
-
+        private int capacity;
 
         //Indexer Property
         public T this[int itemToIndex]
@@ -22,22 +22,29 @@ namespace MyList
             }
         }
         //Count Property
-        public int count
+        public int CountList
         {
             get
             {
-                return this.count;
+                return this.CountList;
             }
-            set
+
+            
+        }
+        //Capacity Property
+        public int ListCapacity
+        {
+            get
             {
-                this.count = value;
+                return capacity;
             }
         }
 
         //Ctor
         public MyList()
         {
-            items = new T[4];
+            capacity = 4;
+            items = new T[capacity];
             
          
         }
@@ -47,7 +54,7 @@ namespace MyList
         public void Add(T itemToAdd)
         {
             items[0] = itemToAdd;
-            if (items [] == T)
+            if (items.CountList )
             {
 
             }

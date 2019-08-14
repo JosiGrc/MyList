@@ -40,20 +40,20 @@ namespace MyListTesting
             Assert.AreEqual(expected, actual);
         }
 
-        //[TestMethod]
-        //public void Add_AddToEmptyList_CountGoesToOne()
-        //{
-        //    // arrange
-        //    MyList<int> testList = new MyList<int>();
-        //    int expected = 1;
-        //    int actual;
+        [TestMethod]
+        public void Add_AddToEmptyList_CountGoesToOne()
+        {
+            // arrange
+            MyList<int> testList = new MyList<int>();
+            int expected = 1;
+            int actual;
 
-        //    // act
-        //    testList.Add(10);
-        //    actual = testList.Count;
+            // act
+            testList.Add(10);
+            actual = testList.CountList;
 
-        //    // assert
-        //    Assert.AreEqual(expected, actual);
-        //}
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
