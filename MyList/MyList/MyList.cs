@@ -19,6 +19,11 @@ namespace MyList
         }
 
         //Methods
+        public void AddingItemsToList()
+        {
+
+        }
+        public void 
 
     }
 }
