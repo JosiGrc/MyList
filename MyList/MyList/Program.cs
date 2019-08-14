@@ -10,7 +10,12 @@ namespace MyList
     {
         static void Main(string[] args)
         {
-            List<T> mylist = new List();
+            MyList<int> MyList = new MyList<int>();
+
+            MyList.Add(6);
+
+            Console.ReadLine();
+
         }
     }
 }

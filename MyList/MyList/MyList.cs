@@ -11,22 +11,20 @@ namespace MyList
         //Member Variables
         private T[] items;
 
-        public T this[int itemToIndex]
-        {
-            get
-            {
-                return items[itemToIndex];
-            }
 
-
-
-
-        }
+        //public T this[int itemToIndex]
+        //{
+        //    get
+        //    {
+        //        return items[itemToIndex];
+        //    }
+        //}
 
         //Ctor
         public MyList()
         {
-            items = new T[0];
+            items = new T[4];
+            
          
         }
 
