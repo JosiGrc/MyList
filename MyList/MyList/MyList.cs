@@ -42,24 +42,16 @@ namespace MyList
 
         //Ctor
         public MyList()
-        {
+        {          
             capacity = 4;
-            items = new T[capacity];
-            
-         
+            items = new T[capacity];               
         }
 
         //Methods
         //Add method works, now make it better. To add new item to the next open index
         public void Add(T itemToAdd)
         {
-            items[0] = itemToAdd;
-            if (items.CountList )
-            {
-
-            }
-
-
+            items[0] = itemToAdd;   
         }
 
     }

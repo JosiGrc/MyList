@@ -12,7 +12,7 @@ namespace MyList
         {
             MyList<int> MyList = new MyList<int>();
 
-            MyList.Add(6);
+            MyList.Add(2);
 
             Console.ReadLine();
 
