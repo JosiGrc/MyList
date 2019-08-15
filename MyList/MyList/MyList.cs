@@ -12,6 +12,8 @@ namespace MyList
         // crreate variables/properties for both count and capacity
         private T[] items;
         private int capacity;
+        private int count;
+        
 
         //Indexer Property
         public T this[int itemToIndex]
@@ -22,17 +24,17 @@ namespace MyList
             }
         }
         //Count Property
-        public int CountList
+        public int Count
         {
             get
             {
-                return this.CountList;
+                return this.count;
             }
 
             
         }
         //Capacity Property
-        public int ListCapacity
+        public int Capacity
         {
             get
             {
@@ -42,7 +44,8 @@ namespace MyList
 
         //Ctor
         public MyList()
-        {          
+        {
+            count = 0;
             capacity = 4;
             items = new T[capacity];               
         }
@@ -51,7 +54,15 @@ namespace MyList
         //Add method works, now make it better. To add new item to the next open index
         public void Add(T itemToAdd)
         {
-            items[0] = itemToAdd;   
+
+            if (count == capacity)
+            {
+                capacity += 4;
+            }
+            else items[count] = itemToAdd;
+            {               
+                count++;
+            }
         }
 
     }

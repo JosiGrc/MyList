@@ -50,7 +50,7 @@ namespace MyListTesting
 
             // act
             testList.Add(10);
-            actual = testList.CountList;
+            actual = testList.Count;
 
             // assert
             Assert.AreEqual(expected, actual);
