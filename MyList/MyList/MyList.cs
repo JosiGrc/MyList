@@ -54,8 +54,7 @@ namespace MyList
         }
 
         //Methods        
-        //i want to increase the array size but also want to keep the fifth item
-        //grab everything from the old array into the new one
+             
         public void Add(T itemToAdd)
         {
             if (count == capacity)
@@ -71,8 +70,23 @@ namespace MyList
             items[count] = itemToAdd;
             count++;
         }
-        public void Remove(T intemToRemove)
+
+        ////////////////////////////////////////////Remove Method Below
+        //make a new array but without the item that was removed
+
+        public void Remove(T itemToRemove)
         {
+            T[] temporaryArray = new T[capacity];
+            for (int i = 0; i < count; i++)
+            {
+                if (itemToRemove.Equals(items[i]))
+                {
+                    temporaryArray[i] = items[i];
+                }
+                items = temporaryArray;
+            }
+            items[count] = itemToRemove;
+            count--;
 
         }
     }
