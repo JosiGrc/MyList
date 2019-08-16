@@ -12,13 +12,16 @@ namespace MyList
         {
             MyList<int> MyList = new MyList<int>();
             MyList<int> testList = new MyList<int>();
-
-            MyList.Add(4);
+           
             testList.Add(1);
-            MyList.Add(5);
-            MyList.Add(10);
-            MyList.Add(8);
-            MyList.Add(11);
+            testList.Add(2);
+            testList.Add(3);
+            testList.Add(4);
+            testList.Add(5);
+
+
+
+
 
 
             Console.ReadLine();

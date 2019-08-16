@@ -59,23 +59,21 @@ namespace MyList
         //grab everything from the old array into the new one
         public void Add(T itemToAdd)
         {
-
             if (count == capacity)
             {
                 capacity = capacity * 2;
                 T[] temporaryArray = new T[capacity];
-                for ()
+                for (int i = 0; i < count; i ++) 
                 {
-                    T[] temporaryArray; 
+                    temporaryArray[i] = items[i];
                 }
-                
-
-
-
+                items = temporaryArray;
             }
-
             items[count] = itemToAdd;
             count++;
+        }
+        public void Remove(T intemToRemove)
+        {
 
         }
 
