@@ -33,10 +33,9 @@ namespace MyList
             get
             {
                 return this.count;
-            }
-
-            
+            }            
         }
+
         //Capacity Property
         public int Capacity
         {
@@ -76,6 +75,5 @@ namespace MyList
         {
 
         }
-
     }
 }
