@@ -55,5 +55,28 @@ namespace MyListTesting
             // assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Add_IncreaseListSize_ListSizeIncreasesByFour()
+        {
+            //Arrange
+            MyList<int> testList = new MyList<int>();
+            int expected = 8;
+            int actual;
+
+            //Act
+            testList.Add(1);
+            testList.Add(2);
+            testList.Add(3);
+            testList.Add(4);
+            testList.Add(5);
+            actual = testList.Capacity;
+
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
     }
 }

@@ -22,6 +22,10 @@ namespace MyList
             {
                 return items[itemToIndex];
             }
+            //set
+            //{
+            //    items[itemToIndex] = value;
+            //}
         }
         //Count Property
         public int Count
@@ -50,19 +54,29 @@ namespace MyList
             items = new T[capacity];               
         }
 
-        //Methods
-        //Add method works, now make it better. To add new item to the next open index
+        //Methods        
+        //i want to increase the array size but also want to keep the fifth item
+        //grab everything from the old array into the new one
         public void Add(T itemToAdd)
         {
 
             if (count == capacity)
             {
-                capacity += 4;
+                capacity = capacity * 2;
+                T[] temporaryArray = new T[capacity];
+                for ()
+                {
+                    T[] temporaryArray; 
+                }
+                
+
+
+
             }
-            else items[count] = itemToAdd;
-            {               
-                count++;
-            }
+
+            items[count] = itemToAdd;
+            count++;
+
         }
 
     }
