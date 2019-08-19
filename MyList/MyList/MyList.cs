@@ -13,6 +13,7 @@ namespace MyList
         private T[] items;
         private int capacity;
         private int count;
+        private bool itemFind;
         
 
         //Indexer Property
@@ -50,6 +51,7 @@ namespace MyList
         {
             count = 0;
             capacity = 4;
+            itemFind = false;
             items = new T[capacity];               
         }
 
@@ -73,21 +75,32 @@ namespace MyList
 
         ////////////////////////////////////////////Remove Method Below
         //make a new array but without the item that was removed
+        //if the item that needs to be removed is in the array make new array without the item that needs to be removed
 
         public void Remove(T itemToRemove)
         {
             T[] temporaryArray = new T[capacity];
+
             for (int i = 0; i < count; i++)
             {
                 if (itemToRemove.Equals(items[i]))
                 {
-                    temporaryArray[i] = items[i];
+                    temporaryArray[i] = items[i + 1];
+                    items = temporaryArray;
+                    count--;
                 }
-                items = temporaryArray;
             }
-            items[count] = itemToRemove;
-            count--;
+            if (itemFind)
+                                              //if the item to remove is not found
+        }                                    //then loop through all the items in the array until is found
+                                             //create a bool that is false until the item to remove is found
 
-        }
+
+                
+
+            
+
+        
     }
 }
+         

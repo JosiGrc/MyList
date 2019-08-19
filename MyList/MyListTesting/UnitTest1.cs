@@ -78,6 +78,8 @@ namespace MyListTesting
         }
         //////////////////////////////////////////////////////////////////////Remove Method Tests Below
 
+        [TestMethod]
+           
         public void Remove_RemoveTheFirstInstaceOfSomething_TheFirstInstanceOfSomethingBeingRemoved()
         {
             //Arrange
@@ -96,8 +98,8 @@ namespace MyListTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
-
-        public void Remove_ItemsShiftIndex_IntemsShiftIndexWhenSomethingIsRemoved()
+        [TestMethod]
+        public void Remove_ItemsShiftIndex_ItemsShiftIndexWhenSomethingIsRemoved()
         {
             //Arrange
             MyList<int> testList = new MyList<int>();
@@ -116,7 +118,7 @@ namespace MyListTesting
             Assert.AreEqual(expected, actual);
 
         }
-
+        [TestMethod]
         public void Remove_RemovingMoreThanOneItem_MoreThanOneItemIsRemoved()
         {
             //Arrange
@@ -136,7 +138,7 @@ namespace MyListTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
-
+        [TestMethod]
         public void Remove_CapacitySizeDoesntChange_NoCapacityChangeAfterItemsBEingRemoved()
         {
             //Arrange
