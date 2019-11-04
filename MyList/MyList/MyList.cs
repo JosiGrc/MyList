@@ -75,35 +75,34 @@ namespace MyList
         //if the item that needs to be removed is in the array make new array without the item that needs to be removed
 
         public void Remove(T itemToRemove)
+         {
+           for (int i = 0; i <= count; i++)
+           {
+                bool compare = Equals(items[i], itemToRemove);
+               if (compare)
+               {
+                   for (int j = i; j < count; j++)
+                   {
+                       if (j == count - 1)
+                       {
+                           items[j] = default;
+                           break;
+                       }
+                       items[j] = items[j + 1];
+                   }
+                   count--;
+                   break;
+               }
+           }
+       }
+
+        //ToString property
+
+        public void ToString()
         {
-            var itemFound = false;
-            for (int i = 0; i <= count; i++)
-            {
-                if (!itemFound)
-                {
-                    if (itemToRemove.Equals(items[i]))
-                    {
-                        itemFound = true;
-                        items[i] = items[i + 1];
-                        count--;
-                    }
-                }
-                else
-                {
-                    if(i == count)
-                    {
-                        items[i] = default;
-                    }
-                    else
-                    {
-                        items[i] = items[i + 1];
-                    }
-                }
 
-            }
-        
         }
-
+        
 
                 
 
