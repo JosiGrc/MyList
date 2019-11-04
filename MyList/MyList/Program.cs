@@ -24,7 +24,6 @@ namespace MyList
 
 
 
-
             Console.ReadLine();
 
         }

@@ -11,10 +11,17 @@ namespace MyList
         //Member Variables
         // crreate variables/properties for both count and capacity
         private T[] items;
-        private int capacity;
-        private int count;
-        private bool itemFind;
-        
+        private int capacity { get; set; }
+        private int count { get; set; }
+
+        //Ctor
+        public MyList()
+        {
+            count = 0;
+            capacity = 4;
+            items = new T[capacity];
+        }
+
 
         //Indexer Property
         public T this[int itemToIndex]
@@ -23,10 +30,7 @@ namespace MyList
             {
                 return items[itemToIndex];
             }
-            //set
-            //{
-            //    items[itemToIndex] = value;
-            //}
+       
         }
         //Count Property
         public int Count
@@ -46,14 +50,7 @@ namespace MyList
             }
         }
 
-        //Ctor
-        public MyList()
-        {
-            count = 0;
-            capacity = 4;
-            itemFind = false;
-            items = new T[capacity];               
-        }
+
 
         //Methods        
              
@@ -79,21 +76,33 @@ namespace MyList
 
         public void Remove(T itemToRemove)
         {
-            T[] temporaryArray = new T[capacity];
-
-            for (int i = 0; i < count; i++)
+            var itemFound = false;
+            for (int i = 0; i <= count; i++)
             {
-                if (itemToRemove.Equals(items[i]))
+                if (!itemFound)
                 {
-                    temporaryArray[i] = items[i + 1];
-                    items = temporaryArray;
-                    count--;
+                    if (itemToRemove.Equals(items[i]))
+                    {
+                        itemFound = true;
+                        items[i] = items[i + 1];
+                        count--;
+                    }
                 }
+                else
+                {
+                    if(i == count)
+                    {
+                        items[i] = default;
+                    }
+                    else
+                    {
+                        items[i] = items[i + 1];
+                    }
+                }
+
             }
-            if (itemFind)
-                                              //if the item to remove is not found
-        }                                    //then loop through all the items in the array until is found
-                                             //create a bool that is false until the item to remove is found
+        
+        }
 
 
                 
