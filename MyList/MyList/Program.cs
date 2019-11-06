@@ -10,16 +10,14 @@ namespace MyList
     {
         static void Main(string[] args)
         {
-            MyList<int> MyList = new MyList<int>();
-            MyList<int> testList = new MyList<int>();
-           
-            testList.Add(1);
+
+            MyList<string> testList = new MyList<string>();
+
+            testList.Add("string");
             testList.ToString();
 
 
 
-
-            Console.WriteLine(testList);
             Console.ReadLine();
 
         }

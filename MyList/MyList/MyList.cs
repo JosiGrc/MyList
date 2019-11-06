@@ -58,16 +58,21 @@ namespace MyList
         {
             if (count == capacity)
             {
-                capacity = capacity * 2;
-                T[] temporaryArray = new T[capacity];
-                for (int i = 0; i < count; i ++) 
-                {
-                    temporaryArray[i] = items[i];
-                }
-                items = temporaryArray;
+                IncreaseCapacity();
             }
             items[count] = itemToAdd;
             count++;
+        }
+
+        public void IncreaseCapacity()
+        {
+            T[] increasedArray = new T[capacity * 2];
+            for (int i = 0; i < count; i++)
+            {
+                increasedArray[i] = items[i];
+            }
+            capacity *= 2;
+            items = increasedArray;
         }
 
         ////////////////////////////////////////////Remove Method Below
