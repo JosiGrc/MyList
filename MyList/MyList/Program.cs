@@ -11,9 +11,9 @@ namespace MyList
         static void Main(string[] args)
         {
 
-            MyList<string> testList = new MyList<string>();
+            MyList<bool> testList = new MyList<bool>();
 
-            testList.Add("string");
+            testList.Add(true);
             testList.ToString();
 
 

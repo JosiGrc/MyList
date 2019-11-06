@@ -160,10 +160,10 @@ namespace MyListTesting
         }
 
 
-        /////////////////////////////////////////////ToList Method tests below
+        /////////////////////////////////////////////ToString Method tests below
 
         [TestMethod]
-        public void ToList_AddingIntToList_GettingBackString()
+        public void ToString_AddingIntToList_GettingBackString()
         {
             //Arrange
             MyList<int> testList = new MyList<int>();
@@ -179,7 +179,7 @@ namespace MyListTesting
         }
 
         [TestMethod]
-        public void ToList_AddingMultipleIntsToList_GettingBackAListOfString()
+        public void ToString_AddingMultipleIntsToList_GettingBackAListOfString()
         {
             //Arrange
             MyList<int> testList = new MyList<int>();
@@ -197,7 +197,7 @@ namespace MyListTesting
 
 
         [TestMethod]
-        public void ToList_AddingAStringToList_StillGettingAStringBack()
+        public void ToString_AddingAStringToList_GettingAStringBack()
         {
             //Arrange
             MyList<string> testList = new MyList<string>();
@@ -212,6 +212,21 @@ namespace MyListTesting
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void ToString_AddingBoolToList_GettingBoolResultInStringFormat()
+        {
+            //Arrange
+            MyList<bool> testList = new MyList<bool>();
+            string expected = "true";
+            string actual;
+            //Act
+            testList.Add(true);
+            actual = testList.ToString();
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
 
 
 
