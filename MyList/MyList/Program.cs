@@ -14,15 +14,12 @@ namespace MyList
             MyList<int> testList = new MyList<int>();
            
             testList.Add(1);
-            testList.Add(2);
-            testList.Add(3);
-            testList.Add(4);
-            testList.Remove(4);
+            testList.ToString();
 
 
 
 
-
+            Console.WriteLine(testList);
             Console.ReadLine();
 
         }

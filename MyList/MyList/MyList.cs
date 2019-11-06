@@ -96,13 +96,25 @@ namespace MyList
            }
        }
 
-        //ToString property
+        ////////////////////////////////////////////////////////ToString property
 
-        public void ToString()
+        public override string ToString()
         {
-
-        }
-        
+            string newString = "";
+            for (int i = 0; i < count; i++)
+            {
+                if(i == count - 1)
+                {
+                    newString += items[i].ToString();
+                }
+                else
+                {
+                    newString += items[i].ToString() + ", ";
+                }
+            }
+           
+            return newString;
+        }   
 
                 
 

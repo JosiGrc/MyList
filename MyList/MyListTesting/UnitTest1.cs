@@ -158,5 +158,63 @@ namespace MyListTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+
+        /////////////////////////////////////////////ToList Method tests below
+
+        [TestMethod]
+        public void ToList_AddingIntToList_GettingBackString()
+        {
+            //Arrange
+            MyList<int> testList = new MyList<int>();
+            string expected = "1";
+            string actual;
+            //Act
+            testList.Add(1);
+            actual = testList.ToString();
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ToList_AddingMultipleIntsToList_GettingBackAListOfString()
+        {
+            //Arrange
+            MyList<int> testList = new MyList<int>();
+            string expected = "1,2";
+            string actual;
+            //Act
+            testList.Add(1);
+            testList.Add(2);
+            actual = testList.ToString();
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [TestMethod]
+        public void ToList_AddingAStringToList_StillGettingAStringBack()
+        {
+            //Arrange
+            MyList<string> testList = new MyList<string>();
+            string expected = "1";
+            string actual;
+            //Act
+            testList.Add("1");
+            actual = testList.ToString();
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+
+
+
+
     }
 }
