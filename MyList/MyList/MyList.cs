@@ -121,11 +121,38 @@ namespace MyList
             return newString;
         }   
 
+        public static MyList<T> Zip(MyList<T>newList)
+        {
+            MyList<T> zippedList = new MyList<T>();
+
+            if(newList.Count > 0)
+            {
+                for (int i = 0; i < newList.Count; i++)
+                {
+                    zippedList.Add(newList[i]);                  
+                }
+                return zippedList;
+            }
+            //else
+            //{
+            //    for (int i = 0; i < even.Count; i++)
+            //    {
+            //        zippedList.Add(even[i]);
+            //        for (int j = 0; j < odd.Count; j++)
+            //        {
+            //            zippedList.Add(odd[j]);
+            //            break;
+            //        }
+            //    }
+            //}
+            return zippedList;
+        }
+    }
                 
 
             
 
         
-    }
+    
 }
          

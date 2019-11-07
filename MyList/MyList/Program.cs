@@ -11,10 +11,11 @@ namespace MyList
         static void Main(string[] args)
         {
 
-            MyList<bool> testList = new MyList<bool>();
+            List<int> odd = new List<int>() { 1, 3, 5 }; List<int> even = new List<int>() { 2, 4, 6 };
 
-            testList.Add(true);
-            testList.ToString();
+            odd.Zip(even);
+
+
 
 
 
