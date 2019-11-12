@@ -228,6 +228,20 @@ namespace MyListTesting
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void Zip_ZipTwoListsTogether_GettingOneListWithTheContetntsOfBothList()
+        {
+            //Arrange
+            MyList<int> listOne = new MyList<int>() { 1, 2, 3 };
+            MyList<int> listTwo = new MyList<int>() { 4, 5, 6 };
+            MyList<int> zipList = new MyList<int>();
+
+            //Act
+            zipList = MyList<int>.Zip(listOne, listTwo);
+
+            //Assert
+        }
+
 
 
 

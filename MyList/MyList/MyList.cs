@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyList
 {
-    public class MyList<T>
+    public class MyList<T> : IEnumerable<T>
     {
         //Member Variables
         // crreate variables/properties for both count and capacity
@@ -121,31 +122,58 @@ namespace MyList
             return newString;
         }   
 
-        public static MyList<T> Zip(MyList<T>newList)
+        public static MyList<T> Zip(MyList<T>listOne, MyList<T> listTwo)
         {
             MyList<T> zippedList = new MyList<T>();
 
-            if(newList.Count > 0)
+            if(listOne.Count > listTwo.Count)
             {
-                for (int i = 0; i < newList.Count; i++)
+                for (int i = 0; i < listOne.Count; i++)
                 {
-                    zippedList.Add(newList[i]);                  
+                    zippedList.Add(listOne[i]);
+                    
+                    for(int j = 0; j < listTwo.Count; j++)
+                    {
+
+                    }
                 }
                 return zippedList;
             }
-            //else
-            //{
-            //    for (int i = 0; i < even.Count; i++)
-            //    {
-            //        zippedList.Add(even[i]);
-            //        for (int j = 0; j < odd.Count; j++)
-            //        {
-            //            zippedList.Add(odd[j]);
-            //            break;
-            //        }
-            //    }
-            //}
+        
             return zippedList;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < Count; i++)
+            {
+                yield return items[i];
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
                 

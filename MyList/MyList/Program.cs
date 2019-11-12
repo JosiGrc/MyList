@@ -13,7 +13,7 @@ namespace MyList
 
             List<int> odd = new List<int>() { 1, 3, 5 }; List<int> even = new List<int>() { 2, 4, 6 };
 
-            odd.Zip(even);
+            //odd.Zip(even);
 
 
 
