@@ -126,21 +126,36 @@ namespace MyList
         {
             MyList<T> zippedList = new MyList<T>();
 
-            if(listOne.Count > listTwo.Count)
+            if (listOne.Count > listTwo.Count)
             {
                 for (int i = 0; i < listOne.Count; i++)
                 {
                     zippedList.Add(listOne[i]);
-                    
-                    for(int j = 0; j < listTwo.Count; j++)
-                    {
 
+                    for (int j = 0; j < listTwo.Count; j++)
+                    {
+                        zippedList.Add(listTwo[i]);
+                        break;
                     }
                 }
                 return zippedList;
             }
+
+            else
+            {
+                for (int i = 0; i < listTwo.Count; i++)
+                {
+                    zippedList.Add(listTwo[i]);
+
+                    for (int j = 0; j < listOne.Count; j++)
+                    {
+                        zippedList.Add(listOne[i]);
+                        break;
+                    }
+                }
+            }
+             return zippedList;           
         
-            return zippedList;
         }
 
 

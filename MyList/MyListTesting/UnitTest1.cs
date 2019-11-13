@@ -234,12 +234,71 @@ namespace MyListTesting
             //Arrange
             MyList<int> listOne = new MyList<int>() { 1, 2, 3 };
             MyList<int> listTwo = new MyList<int>() { 4, 5, 6 };
-            MyList<int> zipList = new MyList<int>();
+            MyList<int> zippedList = new MyList<int>();
+            int expected = zippedList[5];
+            string actual;
 
             //Act
-            zipList = MyList<int>.Zip(listOne, listTwo);
+            zippedList = MyList<int>.Zip(listOne, listTwo);
+            actual = zippedList.ToString();
 
             //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Zip_ZipAnEmptyListWithPopulatedList_ZippedListWithContentsOfPopulatedList()
+        {
+            //Arrange
+            MyList<int> listOne = new MyList<int>() { 1, 2, 3 };
+            MyList<int> listTwo = new MyList<int>();
+            MyList<int> zippedList = new MyList<int>();
+            MyList<int> expected = zippedList;
+            string actual;
+
+            //Act
+            zippedList = MyList<int>.Zip(listOne, listTwo);
+            actual = zippedList.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Zip_ZipOneBiggerListWithOneSmallerList_BothListsAreZipped()
+        {
+            //Arrange
+            MyList<int> listOne = new MyList<int>() { 1, 2, 3 };
+            MyList<int> listTwo = new MyList<int>() { 4, 5, 6, 7};
+            MyList<int> zippedList = new MyList<int>();
+            MyList<int> expected = zippedList;
+            string actual;
+
+            //Act
+            zippedList = MyList<int>.Zip(listOne, listTwo);
+            actual = zippedList.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void Zip_TheNumbersInZippedListAreInTheCorrectIndex_EverythingIsInTheCorrectIndex()
+        {
+            //Arrange
+            MyList<int> listOne = new MyList<int>() { 1, 2, 3 };
+            MyList<int> listTwo = new MyList<int>() { 4, 5, 6, 7 };
+            MyList<int> zippedList = new MyList<int>();
+            MyList<int> expected = zippedList;
+            MyList<int> actual;
+
+            //Act
+            zippedList = MyList<int>.Zip(listOne, listTwo);
+            actual = zippedList;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
         }
 
 
