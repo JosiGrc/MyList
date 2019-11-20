@@ -11,12 +11,13 @@ namespace MyList
         static void Main(string[] args)
         {
 
-            List<int> odd = new List<int>() { 1, 3, 5 }; List<int> even = new List<int>() { 2, 4, 6 };
+            MyList<int> odd = new MyList<int>() {1, 2, 3 };
+            MyList<int> even = new MyList<int>() {2};
 
 
-            odd.Zip(odd, even);
+            MyList<int> testList = new MyList<int>();
 
-
+            testList = odd - even;
 
             Console.ReadLine();
 

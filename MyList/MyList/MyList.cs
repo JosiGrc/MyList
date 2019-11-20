@@ -10,7 +10,7 @@ namespace MyList
     public class MyList<T> : IEnumerable<T>
     {
         //Member Variables
-        // crreate variables/properties for both count and capacity
+        // create variables/properties for both count and capacity
         private T[] items;
         private int capacity { get; set; }
         private int count { get; set; }
@@ -158,6 +158,40 @@ namespace MyList
         
         }
 
+        public static MyList<T> operator + (MyList<T> listOne, MyList<T> listTwo)
+        {
+            MyList<T> addedList = new MyList<T>();
+
+            foreach (T item in listOne)
+            {
+                addedList.Add(item);
+            }
+            foreach (T item in listTwo)
+            {
+                addedList.Add(item);
+            }
+            return addedList;
+        }
+
+        public static MyList<T> operator - (MyList<T> listOne, MyList<T> listTwo)
+        {
+            MyList<T> newList = new MyList<T>();
+            for (int i = 0; i < listOne.count; i++)
+            {
+                for (int j = 0; j < listTwo.count; j++)
+                {
+                    if (Equals(listOne[i], listTwo[j]))
+                    {
+                        break;
+                    }
+                    else if (j == listTwo.count - 1)
+                    {
+                        newList.Add(listOne[i]);
+                    }
+                }
+            }
+            return newList;
+        }
 
 
 
@@ -190,6 +224,8 @@ namespace MyList
         {
             return GetEnumerator();
         }
+
+        
     }
                 
 

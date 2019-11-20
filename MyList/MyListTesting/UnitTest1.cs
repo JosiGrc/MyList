@@ -228,6 +228,11 @@ namespace MyListTesting
             Assert.AreEqual(expected, actual);
         }
 
+
+        
+        ///////////////////////////////// Zip method tests
+        
+
         [TestMethod]
         public void Zip_ZipTwoListsTogether_GettingOneListWithTheContetntsOfBothList()
         {
@@ -235,12 +240,11 @@ namespace MyListTesting
             MyList<int> listOne = new MyList<int>() { 1, 2, 3 };
             MyList<int> listTwo = new MyList<int>() { 4, 5, 6 };
             MyList<int> zippedList = new MyList<int>();
-            int expected = zippedList[5];
-            string actual;
+            MyList<int> expected = new MyList<int>() { 1, 2, 3, 4, 5, 6 };
+            MyList<int> actual;
 
             //Act
-            zippedList = MyList<int>.Zip(listOne, listTwo);
-            actual = zippedList.ToString();
+            actual = MyList<int>.Zip(listOne, listTwo);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -253,12 +257,11 @@ namespace MyListTesting
             MyList<int> listOne = new MyList<int>() { 1, 2, 3 };
             MyList<int> listTwo = new MyList<int>();
             MyList<int> zippedList = new MyList<int>();
-            MyList<int> expected = zippedList;
-            string actual;
+            MyList<int> expected = new MyList<int>() { 1, 2, 3 };
+            MyList<int> actual;
 
             //Act
-            zippedList = MyList<int>.Zip(listOne, listTwo);
-            actual = zippedList.ToString();
+            actual = MyList<int>.Zip(listOne, listTwo);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -270,13 +273,11 @@ namespace MyListTesting
             //Arrange
             MyList<int> listOne = new MyList<int>() { 1, 2, 3 };
             MyList<int> listTwo = new MyList<int>() { 4, 5, 6, 7};
-            MyList<int> zippedList = new MyList<int>();
-            MyList<int> expected = zippedList;
-            string actual;
+            MyList<int> expected = new MyList<int>() { 1, 2, 3, 4, 5, 6, 7 };
+            MyList<int> actual;
 
             //Act
-            zippedList = MyList<int>.Zip(listOne, listTwo);
-            actual = zippedList.ToString();
+            actual = MyList<int>.Zip(listOne, listTwo);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -289,19 +290,150 @@ namespace MyListTesting
             //Arrange
             MyList<int> listOne = new MyList<int>() { 1, 2, 3 };
             MyList<int> listTwo = new MyList<int>() { 4, 5, 6, 7 };
-            MyList<int> zippedList = new MyList<int>();
-            MyList<int> expected = zippedList;
+            MyList<int> expected = new MyList<int>() { 1, 2, 3, 4, 5, 6, 7 };
             MyList<int> actual;
 
             //Act
-            zippedList = MyList<int>.Zip(listOne, listTwo);
-            actual = zippedList;
+            actual = MyList<int>.Zip(listOne, listTwo);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
+        /////////////////////////////////// + operator overload tests
 
+        [TestMethod]
+        public void PlusOverLoad_AddingTwoListsTogether_GettingOneList()
+        {
+            //Arrange
+            MyList<int> listOne = new MyList<int>() { 1, 2, 3 };
+            MyList<int> listTwo = new MyList<int>() { 4, 5 };
+            MyList<int> expected = new MyList<int>() { 1, 2, 3, 4, 5 };
+            MyList<int> actual;
+
+            //Act
+            actual = listOne + listTwo;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void PlusOverLoad_AddingAPopulatedListWithAnEmptyList_GettingOneList()
+        {
+            //Arrange
+            MyList<int> listOne = new MyList<int>() { 1, 2, 3 };
+            MyList<int> listTwo = new MyList<int>() {};
+            MyList<int> expected = new MyList<int>() { 1, 2, 3, };
+            MyList<int> actual;
+
+            //Act
+            actual = listOne + listTwo;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void PlusOverLoad_AddingAListWithPositiveAndNegativeInts_GettingAListWithPositiveIntsListedFirstAndNegativesLast()
+        {
+            //Arrange
+            MyList<int> listOne = new MyList<int>() { 1, 2, 3 };
+            MyList<int> listTwo = new MyList<int>() { -1, -2, -3};
+            MyList<int> expected = new MyList<int>() { 1, 2, 3, };
+            MyList<int> actual;
+
+            //Act
+            actual = listOne + listTwo;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void PlusOverLoad_AddingTwoSameSizedLists_GettinListWithAllItems()
+        {
+            //Arrange
+            MyList<int> listOne = new MyList<int>() { 1, 2, 3 };
+            MyList<int> listTwo = new MyList<int>() { 4, 5, 6 };
+            MyList<int> expected = new MyList<int>() { 1, 2, 3, 4, 5, 6 };
+            MyList<int> actual;
+
+            //Act
+            actual = listOne + listTwo;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        //////////////////////////////// - operator overload tests
+        
+        [TestMethod]
+
+        public void MinusOverLoad_RemovingASingleItemFromAList_ListWithoutRemovedItems()
+        {
+            //Arrange
+            MyList<int> listOne = new MyList<int>() { 1, 2, 3 };
+            MyList<int> listTwo = new MyList<int>() { 2, 5, 6 };
+            MyList<int> expected = new MyList<int>() { 1, 3 };
+            MyList<int> actual;
+
+            //Act
+            actual = listOne - listTwo;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void MinusOverLoad_RemovingMultipleInstances_ListWithoutRemovedItems()
+        {
+            //Arrange
+            MyList<int> listOne = new MyList<int>() { 1, 2, 3 };
+            MyList<int> listTwo = new MyList<int>() { 2, 5, 1 };
+            MyList<int> expected = new MyList<int>() { 3 };
+            MyList<int> actual;
+
+            //Act
+            actual = listOne - listTwo;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void MinusOverLoad_RemovingNothingFromList_ListStaysTheSame()
+        {
+
+            //Arrange
+            MyList<int> listOne = new MyList<int>() { 1, 2, 3 };
+            MyList<int> listTwo = new MyList<int>() { 4, 5, 6 };
+            MyList<int> expected = new MyList<int>() { 1, 2, 3 };
+            MyList<int> actual;
+
+            //Act
+            actual = listOne - listTwo;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+        [TestMethod]
+        public void MinusOverLoad_RemovingTheSameThingMultipleTimes_ListWithoutRemovedItems()
+        {
+            //Arrange
+            MyList<int> listOne = new MyList<int>() { 1, 2, 3, 3 };
+            MyList<int> listTwo = new MyList<int>() { 4, 3, 5 };
+            MyList<int> expected = new MyList<int>() { 1, 2 };
+            MyList<int> actual;
+
+            //Act
+            actual = listOne - listTwo;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
 
 
 
